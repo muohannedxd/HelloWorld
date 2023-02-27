@@ -1,2 +1,2 @@
 # ExerciceTask-  
-## Software Engineering LAB
+## Software Engineering LAB session
