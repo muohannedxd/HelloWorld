@@ -1,2 +1,2 @@
 # ExerciceTask-  
-## SE LAB
+## Software Engineering LAB
