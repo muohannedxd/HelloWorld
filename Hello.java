@@ -18,7 +18,7 @@ public class Hello {
      * @param args are the command line arguments
      */
     public static void main(String [] args){
-        Hello myHello= new Hello();
+        Hello myHello = new Hello();
         myHello.print();
     }
 }
