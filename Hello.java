@@ -1,20 +1,22 @@
-/*
- * javax is a library that serves GUI in JAVA
- */
+
+// javax is a library that serves GUI in JAVA
 import javax.swing.*;
+import java.util.Scanner;
 
 /**
  * This class would print a hello world message by creating a class with a
  * single print method
+ * 
  * @author Lina Ahlem Boualam
  * @version 2023/02/23
  */
 public class Hello {
     /**
      * The method prints to the console the message Hello World
+     * 
      * @retrun returns True when the message is printed successfully.
      */
-    public boolean print(){
+    public boolean print() {
         System.out.println("Hello World");
         return true;
     }
@@ -26,7 +28,7 @@ public class Hello {
         // creating the frame and label
         JFrame frame = new JFrame("HELLO WORLD GUI");
         JLabel label = new JLabel("Hello World", SwingConstants.CENTER);
-        
+
         // adding the label to the frame
         frame.add(label);
 
@@ -37,16 +39,45 @@ public class Hello {
 
     }
 
+    /*
+     * procedure to ask user if he wants the GUI
+     */
+    public void Choice() {
+        // initialize program class
+        Hello myHello = new Hello();
+
+        // initialize Scanner
+        Scanner scan = new Scanner(System.in);
+
+        // parameter for choice
+        int choice;
+
+        // menu
+        System.out.print(
+                "1. Command Line Interface (CLI)\n2. Graphical User Interface (GUI)\n3. Exit\nEnter an option: ");
+        choice = scan.nextInt();
+
+        switch (choice) {
+            case 1:
+                myHello.print();
+                System.out.println("\n");
+                break;
+            case 2:
+                myHello.GUI();
+                System.out.println("\n");
+                break;
+            default:
+                break;
+        }
+    }
+
     /**
      * This is the main method to be invoked when launching the program
+     * 
      * @param args are the command line arguments
      */
-    public static void main(String [] args){
-        Hello myHello = new Hello();
-        myHello.print();
-
-        // here, we will call the function that creates the GUI
-        Hello hh = new Hello();
-        hh.GUI();
+    public static void main(String[] args) {
+        Hello hello = new Hello();
+        hello.Choice();
     }
 }
