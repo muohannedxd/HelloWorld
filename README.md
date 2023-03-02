@@ -7,9 +7,3 @@ Creating a program that displays Hello world and how many times it woz executed 
 ### Regulations:
 Software must be working effeciently and with no problems, lag or any error.  
 I hope you understand that...
-=======
-### HEHEHE
-### HOHOHO
->>>>>>> origin/Samah
-=======
->>>>>>> origin/Lina
