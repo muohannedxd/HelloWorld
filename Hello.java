@@ -1,4 +1,10 @@
-
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 // javax is a library that serves GUI in JAVA
 import javax.swing.*;
 import java.util.Scanner;
@@ -25,9 +31,23 @@ public class Hello {
      * function that creates the GUI
      */
     public void GUI() {
+        // loading the counter
+        int counter = 0;
+        try (FileReader reader = new FileReader("counter.txt")) {
+            counter = reader.read();
+        } catch (IOException e) {
+            // Ignore the exception and use the default value of 0
+        }
+
+        //incrementing it
+        
+        counter += 1;
         // creating the frame and label
         JFrame frame = new JFrame("HELLO WORLD GUI");
-        JLabel label = new JLabel("Hello World", SwingConstants.CENTER);
+        JLabel label = new JLabel("Hello World " + counter, SwingConstants.CENTER);
+        
+        // saving after incrementing
+        saveCounter(counter);
 
         // adding the label to the frame
         frame.add(label);
@@ -36,9 +56,18 @@ public class Hello {
         frame.setSize(400, 300);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
     }
 
+    /*
+     * saving the counter in the file
+     */
+    private void saveCounter(int counter) {
+        try (FileWriter writer = new FileWriter("counter.txt")) {
+          writer.write(counter);
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+    }
     /*
      * procedure to ask user if he wants the GUI
      */
