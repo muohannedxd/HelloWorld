@@ -2,3 +2,6 @@
 ## Software Engineering LAB session
 ### Goal of this project:
 Creating a program that displays Hello world and how many times it woz executed by a single computer using GUI (Graphical User Interface)
+
+
+## exerci
